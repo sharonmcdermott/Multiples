@@ -33,11 +33,11 @@ class playMultiplesVC: UIViewController, UITextFieldDelegate {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
-        titleImg.hidden = false
-        whatMultipleTxt.hidden = false
-        playBtn.hidden = false
-        pressAddToAddLbl.hidden = true
-        multiplierLbl.hidden = true
+        titleImg.isHidden = false
+        whatMultipleTxt.isHidden = false
+        playBtn.isHidden = false
+        pressAddToAddLbl.isHidden = true
+        multiplierLbl.isHidden = true
       
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -57,12 +57,12 @@ class playMultiplesVC: UIViewController, UITextFieldDelegate {
 
 
     }
-    @IBAction func whatMultipleTxt(sender: UIView) {
+    @IBAction func whatMultipleTxt(_ sender: UIView) {
             //playBtn.hidden = true
     
     }    
     
-    @IBAction func onPlayBtnPressed(sender: UIButton!) {
+    @IBAction func onPlayBtnPressed(_ sender: UIButton!) {
         
         if whatMultipleTxt.text != nil && whatMultipleTxt.text != "" {
             
@@ -71,20 +71,20 @@ class playMultiplesVC: UIViewController, UITextFieldDelegate {
             numberInputByUser = Int(whatMultipleTxt.text!)!
             currentInput = 0
             
-            titleImg.hidden = true
-            whatMultipleTxt.hidden = true
-            pressAddToAddLbl.hidden = false
-            multiplierLbl.hidden = true
-            playBtn.hidden = true
-            addBtn.hidden = false
+            titleImg.isHidden = true
+            whatMultipleTxt.isHidden = true
+            pressAddToAddLbl.isHidden = false
+            multiplierLbl.isHidden = true
+            playBtn.isHidden = true
+            addBtn.isHidden = false
             
     }
         
 }
-    @IBAction func onAddBtnPressed(sender: UIButton) {
-        pressAddToAddLbl.hidden = true
-        multiplierLbl.hidden = false
-        addBtn.hidden = false
+    @IBAction func onAddBtnPressed(_ sender: UIButton) {
+        pressAddToAddLbl.isHidden = true
+        multiplierLbl.isHidden = false
+        addBtn.isHidden = false
         
 
             newCurrentInput += numberInputByUser
